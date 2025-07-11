@@ -1,56 +1,64 @@
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
-    margin: 0px;
-    padding: 0px;
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: "poppins" , sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-.banner{
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Banner Section */
+.banner {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 30vh;
+    min-height: 50vh;
     padding: 100px;
     background-color: #fff;
-    /* transition: margin-right 2s ease-in; */
+    color: #333;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-header{
+/* Header */
+header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
-    padding: 20px ;
+    padding: 20px;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo{
+/* Logo */
+.logo {
     color: #333;
     text-decoration: none;
     font-size: 2em;
     font-weight: 700;
     width: 20%;
-    /* transition: 0.5s; */
 }
 
-ul{
+.logo span {
+    color: orange;
+    font-size: 2em;
+}
+
+/* Nav Menu */
+ul {
     list-style-type: none;
-    gap: 38px;
     display: flex;
     justify-content: space-around;
+    gap: 38px;
     width: 35%;
-}
-
-ul li a{
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.2em;
-    color: #333;
 }
 
 span{
@@ -58,23 +66,33 @@ span{
     font-size: 2em;
 }
 
-.content{
-    padding: 20px;
-    position: relative;
-    max-width: 700px;
-    letter-spacing: 0.2em;
+ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: #333;
 }
 
-.content h2{
+/* Content */
+.content {
+    padding: 20px;
+    position: relative;
+    max-width: 70%;
+    letter-spacing: 0.2em;
+    top: 70px;
+}
+
+.content h2 {
     font-size: 4em;
 }
 
-.content p{
-    margin: 10px 0px;
+.content p {
+    margin: 10px 0;
     font-size: 1.2em;
 }
 
-button{
+/* Buttons */
+button {
     position: relative;
     background: orange;
     border: none;
@@ -83,15 +101,79 @@ button{
     padding: 15px 35px;
     border-radius: 10px;
     font-weight: 600;
+    margin-right: 10px;
+    transition: all 0.3s ease;
 }
 
-.chat{
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Chat Button */
+.chat {
     background: transparent;
     color: #333;
+    border: 2px solid orange;
 }
 
-.daynight{
+/* Icons */
+.icon {
+    padding: 0 15px;
+    font-size: 30px;
+    vertical-align: middle;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: orange;
+}
+
+/* Day/Night Toggle */
+.daynight {
     position: absolute;
     left: 50%;
-    bottom: 25px;
+    bottom: -30px;
+    background: #f0f0f0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 2em;
+}
+
+/* Dark Mode */
+.banner.night {
+    background-color: #333;
+    color: #fff;
+}
+
+.banner.night .logo,
+.banner.night ul li a,
+.banner.night .chat,
+.banner.night .icon {
+    color: #fff;
+}
+
+.banner.night .chat {
+    border-color: orange;
+}
+
+.daynight ion-icon:nth-child(2),
+.banner.night .daynight ion-icon:nth-child(1){
+    display: none;
+}
+
+.banner.night .daynight ion-icon:nth-child(2){
+    display: block;
+}
+
+.banner.night .logo span {
+    color: orange;
 }
